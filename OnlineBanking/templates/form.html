@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORMPAGE</title>
+</head>
+<body>
+<h2>FILL OUT THE FORM</h2>
+<form action="" enctype="multipart/form-data">
+    {% csrf_token %}
+      {{form.as_p}}
+    <tr>
+        <td>
+            first_name:
+        </td>
+        <td>
+            <input type="text" name="first_name"> <br>
+        </td>
+     </tr>
+    <tr>
+        <td>
+            DOB   :
+        </td>
+        <td>
+            <input type="date" name="DOB"><br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Age   :
+        </td>
+        <td>
+            <input type="number" name="Age"><br>
+        </td>
+    </tr>
+<tr>
+        <td>
+            Gender:
+        </td><br>
+        <td>
+            <input type="radio" name="Gender"> Male<br>
+            <input type="radio" name="Gender"> Female<br>
+            <input type="radio" name="Gender"> Transgender<br>
+
+        </td>
+</tr>
+    <tr>
+        <td>
+            Ph No :
+        </td>
+        <td>
+            <input type="number" name="PhoneNumber"> <br>
+        </td>
+    </tr>
+     <tr>
+        <td>
+            E-mail:
+        </td>
+        <td>
+            <input type="email" name="Email"> <br>
+        </td>
+     </tr>
+         <tr>
+        <td>
+            Adress:
+        </td>
+        <td>
+            <input type="text" name="Adress"> <br>
+        </td>
+     </tr>
+
+    <tr>
+        <td>
+            Payment Methode:
+        </td><br>
+        <td>
+            <input type="checkbox" name="Payment Methode"> Debit Card<br>
+            <input type="checkbox" name="Payment Methode"> Credit Card<br>
+            <input type="checkbox" name="Payment Methode"> Cheque Book<br>
+        </td>
+    </tr>
+<label>Branches:</label>
+
+<select name="District" id="District">
+    <option>select</option>
+    <option value="Trivandrum">Trivandrum</option>
+    <option value="Kollam">Kollam</option>
+    <option value="Pathanamthitta">Pathanamthitta</option>
+    <option value="Alappuzha">Alappuzha</option>
+    <option value="Kottayam">Kottayam</option>
+    <option value="Ernakulam">Ernakulam</option>
+    <option value="Idukki">Idukki</option>
+    <option value="Malappuram">Malappuram</option>
+    <option value="Thrissur">Thrissur</option>
+    <option value="Palakkad">Palakkad</option>
+    <option value="Kozhikode">Kozhikode</option>
+    <option value="Wayanadu">Wayanadu</option>
+    <option value="Kannur">Kannur</option>
+    <option value="Kasargode">Kasargode</option>
+
+
+</select><br>
+
+<label>Account Type:</label>
+ <select name="Account Type" id="Account Type">
+     <option>select</option>
+    <option value="Savings Account">Savings Account</option>
+    <option value="Current Account">Current Account</option>
+    <option value="Salary Account">Salary Account</option>
+ </select><br>
+        <input type="submit"><br>
+
+
+</form>
+{% for msgs in messages %}
+<h2>{{msgs}}</h2>
+{% endfor %}
+
+</body>
+</html>
